@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Bots de Discord - Adicionar BOT</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/modern-business.css" rel="stylesheet">
+
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-light navbar-expand-lg navbar-dark fixed-top" style="background-color: #2E9AFE;">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#textoNavbar" aria-controls="textoNavbar" aria-expanded="false" aria-label="Alterna navegação">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+        <div class="collapse navbar-collapse" id="textoNavbar">
+          <ul class="navbar-nav mr-auto">
+
+<a class="navbar-brand" href="/">
+    <img src="https://cdn.discordapp.com/icons/800505498926579772/dd1b0d66c871a880f60940f0e3799f5a.png?size=2048" width="50" height="50" class="d-inline-block align-top" alt="">
+
+  </a>
+
+
+            <li class="nav-item active">
+              <a class="nav-link" style="color:#ffffff;" href="/">Inicio <span class="sr-only">(Página atual)</span></a>
+            </li>
+
+          </ul>
+          <span class="nav-item">       
+          <% if (user) {%>
+            <li class="nav-item" style="display: flex; flex-direction: row; flex-wrap: nowrap; align-items: center; justify-content: center;"> 
+
+<a class="nav-link" style="color:#ffffff;" href="/addbot">Adicionar BOT</a> 
+
+<% if(!client.guilds.cache.get('800505498926579772').members.cache.get(user.id).roles.cache.has(('803008752286564362'))) { %>
+
+            <% } else { %>
+<div class="dropdown">
+  <a class="dropbtn ">Staff</button>
+  <div class="dropdown-content">
+    <a href="/analises">Painel Mod</a>
+    <a href="/painel">Painel Admin</a>
+  </div>
+</div>
+          <% } %>  
+
+<div class="dropdown">
+  <a class="dropbtn "><img width="50px;" style="border-radius: 50%" src="<%- user.avatarURL %>" alt="avatar" class=""> <%- user.tag %></button>
+  <div class="dropdown-content">
+    <a href="/perfil">Perfil</a>
+  </div>
+</div>
+
+          <% } else { %>
+
+          <li class="btn btn-sm btn-secondary display-4"><a style="color:#ffffff;" href="/logar" >Logar</a></li>
+          <% } %>  
+          </span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+  <div class="container">
+
+<% if (!user) {%>
+<div class="alert alert-success" role="alert">
+  <h4 class="alert-heading">Atenção</h4>
+  <p>Para adicionar um bot você precisa fazer login.</p>
+  <hr>
+  <p class="mb-0">Mensagem enviada pela equipe staff.</p>
+  <a class="btn btn-secondary btn-form display-4" href="/logar">Login</a>
+</div><% } %>
+
+    <h1 class="my-4">ADICIONAR BOT</h1>
+  Preste muita atenção antes de adicionar seu bot caso coloque seus dados será banido permanente.
+<div class="form-container">
+            <form class="mbr-form" action="/addbot/enviar" method="POST">
+              <div data-for="name">
+                  <div class="form-group">
+                      <input style="text-align: center; height: 50px;" type="text" class="form-control px-3" name="id" data-form-field="Name" placeholder="ID BOT" required="" id="name-header12-5">
+                  </div>
+              </div>
+              <div data-for="name">
+                  <div class="form-group">
+                      <input style="text-align: center; height: 50px;" type="text" class="form-control px-3" name="nome" data-form-field="Name" placeholder="Nome BOT" required="" id="name-header15-5">
+                  </div>
+              </div>
+              <div data-for="name">
+                  <div class="form-group">
+                      <input style="text-align: center; height: 50px;" type="text" class="form-control px-3" name="prefixo" data-form-field="Name" placeholder="Prefix" required="" id="name-header15-5">
+                  </div>
+              </div>
+              <div data-for="name">
+                  <div class="form-group">
+                      <input style="text-align: center; height: 50px;" type="text" class="form-control px-3" name="botinvite" data-form-field="Name" placeholder="Convite BOT" required="" id="name-header15-5">
+                  </div>
+              </div>
+              <div data-for="name">
+                  <div class="form-group">
+                      <input style="text-align: center; height: 50px;" type="text" class="form-control px-3" name="botsuporte" data-form-field="Name" placeholder="Servidor Suporte" required="" id="name-header15-5">
+                  </div>
+              </div>
+              <div data-for="name">
+                  <div class="form-group">
+                      <input style="text-align: center; height: 50px;" type="text" class="form-control px-3" name="descp" data-form-field="Name" placeholder="Descrição Curta" required="" id="name-header15-5" maxlength="35" maxlength="40">
+                  </div>
+              </div>
+              <div data-for="name">
+                  <div class="form-group">
+                  <select class="form-control px-3" name="livraria">
+                <option>JavaScript</option>
+                <option>Python</option>
+                <option>Java</option>
+                <option>Discord Bot For Designer</option>
+                <option>Haskell</option>
+                <option>Kotlin</option>
+                   </select>
+                </div>
+              </div>
+                <span class="input-group-btn">
+ <button class="btn btn-secondary btn-form display-4" type="submit">Enviar</button>
+                </span>
+            </form>
+    </div>
+    </div>
+</div> </center>
+    </div>
+    <div class="mbr-arrow hidden-sm-down" aria-hidden="true">
+        <a href="#next">
+            <i class="mbri-down mbr-iconfont"></i>
+        </a>
+    </div>
+
+</center>
+
+            </div>
+        </div>
+    </div>
+</div>
+<center>
+
+    
+  <!-- /.container -->
+
+
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
+

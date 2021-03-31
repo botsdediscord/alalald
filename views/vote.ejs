@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="fff">
+
+  <title>Bots de Discord - Vote</title>
+
+
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <link href="css/bot.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/modern-business.css" rel="stylesheet">
+<style>
+
+:root {
+  --primary: #FFFFFF;
+  --secondary: #17141d;
+  --tertiary: #7a7a8c;
+  --quaternary: #f46330;
+  --quintary: #28242f;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  width: 100%;
+  height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background-color: var(--primary);
+  color: #fff;
+}
+
+
+.cards {
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-gap: 30px;
+}
+
+.cards {
+  max-width: 960px;
+  margin: 0 auto 30px;
+}
+
+.titlep {
+
+  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 1);
+}
+
+
+.card {
+  flex-shrink: 0;
+  width: 300px;
+  height: 400px;
+  border-radius: 20px;
+  box-shadow: 0 0 99px 0 rgba(0, 0, 0, 1);
+  justify-content: space-between;
+  background-color: var(--secondary);
+  padding: 30px;
+  font-size: 10px;
+  margin-left: -50px;
+  transition: 0.2s;
+  z-index: 1;
+  overflow: hidden;
+  position: relative;
+  shadow: 0 0 99px 0 rgba(0, 0, 0, 1);
+
+}
+
+.card .tags a {
+  display: inline-block;
+  border: solid 3px var(--quintary);
+  border-radius: 30px;
+  padding: 8px 25px;
+  text-transform: uppercase;
+  color: var(--tertiary);
+  font-weight: bold;
+  text-decoration: none;
+  margin-bottom: 3px;
+  transition: all ease-out 0.3s;
+}
+
+.card .tags a:hover {
+  border-color: #fff;
+  color: var(--quaternary);
+}
+
+.card:hover {
+  transform: translateY(-20px);
+  margin-right: 150px;
+}
+
+
+.circle{
+    border-radius:100%;
+    border:10px solid red;
+    width:150px;
+    height:150px;
+    background-color: blue;
+}
+
+.myButton {
+	background-color:#44c767;
+	border-radius:28px;
+	border:1px solid #18ab29;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:17px;
+	padding:16px 31px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+}
+.myButton:hover {
+	background-color:#5cbf2a;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
+.img-circle-small {
+    width: 175px;
+    height: 175px;
+    border-top-left-radius: 50% 50%;
+    border-top-right-radius: 50% 50%;
+    border-bottom-right-radius: 50% 50%;
+    border-bottom-left-radius: 50% 50%;
+    margin-bottom: 2px;
+    border-radius: 50%;
+    box-shadow:
+        inset 0 0 50px #fff,      /* inner white */
+        inset 20px 0 80px #f0f,   /* inner left magenta short */
+        inset -20px 0 80px #0ff,  /* inner right cyan short */
+        inset 20px 0 300px #f0f,  /* inner left magenta broad */
+        inset -20px 0 300px #0ff, /* inner right cyan broad */
+        0 0 50px #fff,            /* outer white */
+        -10px 0 80px #f0f,        /* outer left magenta */
+        10px 0 80px #0ff;         /* outer right cyan */
+}
+
+/* Style The Dropdown Button */
+.dropbtn {
+  background-color: #2E9AFE;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #2E9AFE;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+  background-color: #2E9AFE;
+}
+
+</style>
+
+<body>
+
+<!-- Navigation -->
+  <nav class="navbar navbar-light navbar-expand-lg navbar-dark fixed-top" style="background-color: #2E9AFE;">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#textoNavbar" aria-controls="textoNavbar" aria-expanded="false" aria-label="Alterna navegação">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+        <div class="collapse navbar-collapse" id="textoNavbar">
+          <ul class="navbar-nav mr-auto">
+
+<a class="navbar-brand" href="/">
+    <img src="https://cdn.discordapp.com/icons/800505498926579772/dd1b0d66c871a880f60940f0e3799f5a.png?size=2048" width="50" height="50" class="d-inline-block align-top" alt="">
+
+  </a>
+
+
+            <li class="nav-item active">
+              <a class="nav-link" style="color:#ffffff;" href="/">Inicio <span class="sr-only">(Página atual)</span></a>
+            </li>
+
+          </ul>
+          <span class="nav-item">       
+          <% if (user) {%>
+            <li class="nav-item" style="display: flex; flex-direction: row; flex-wrap: nowrap; align-items: center; justify-content: center;"> 
+
+<a class="nav-link" style="color:#ffffff;" href="/addbot">Adicionar BOT</a> 
+
+<% if(!client.guilds.cache.get('800505498926579772').members.cache.get(user.id).roles.cache.has(('803008752286564362'))) { %>
+
+            <% } else { %>
+<div class="dropdown">
+  <a class="dropbtn ">Staff</button>
+  <div class="dropdown-content">
+    <a href="/analises">Painel Mod</a>
+    <a href="/painel">Painel Admin</a>
+  </div>
+</div>
+          <% } %>  
+
+<div class="dropdown">
+  <a class="dropbtn "><img width="50px;" style="border-radius: 50%" src="<%- user.avatarURL %>" alt="avatar" class=""> <%- user.tag %></button>
+  <div class="dropdown-content">
+    <a href="/perfil">Perfil</a>
+  </div>
+</div>
+
+          <% } else { %>
+
+          <li class="btn btn-sm btn-secondary display-4"><a style="color:#ffffff;" href="/logar" >Logar</a></li>
+          <% } %>  
+          </span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+<header>
+    <div id="inicio" class="carousel slide" data-ride="carousel">
+
+      <div class="carousel-inner" role="listbox">
+        <!-- Slide One - Set the background image for this slide in the line below -->
+
+        <div class="carousel-item active" style="background-color: #FFFFFF">
+<ul>
+
+
+          </ul>
+          
+            <br>
+            <br>
+
+<span>
+          <div class="carousel-caption d-none d-md-block">
+<br/><br/>
+<br/><br/>
+      <center><h1 class="titlep" style="color:#050505">Votado com Sucesso !</h1></center>
+            <center><h5 style="color: #000000">Você votou nesse bot com sucesso aguarde o tempo para votar novamente.</h5></center>
+<a href="/" type="button" class="btn btn-outline-primary">Voltar</a>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+
+
+ 
+
+
+
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
